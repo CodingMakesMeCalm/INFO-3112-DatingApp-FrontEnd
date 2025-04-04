@@ -12,7 +12,7 @@ import {
   Space,
   Select,
 } from 'antd';
-import { connect, Dispatch } from 'umi';
+import { connect, Dispatch, history } from 'umi';
 import { ConnectState } from '../connect';
 import { UserState } from '../../pages/user/model';
 import { UserOutlined } from '@ant-design/icons';
@@ -72,15 +72,18 @@ const UserMenu: React.FC<Prop> = (props) => {
         type: 'searching/queryUsers',
         payload: [],
       });
+      history.push('/posts');
     }
     if (e.key === 'editProfile') {
       registerForm.resetFields();
       setUserInfoModalVisible(true);
     }
     if (e.key === 'newPost') {
+      newPostForm.resetFields();
       setNewPostModalVisible(true);
     }
     if (e.key === 'login') {
+      loginForm.resetFields();
       setLoginModalVisible(true);
     }
     if (e.key === 'register') {

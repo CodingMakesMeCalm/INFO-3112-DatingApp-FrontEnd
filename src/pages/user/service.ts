@@ -67,7 +67,10 @@ export async function requestToGetPersonalMessage(params: any) {
   });
 }
 
-export async function requestToSetMessageRead(params: { messageId: number }) {
+export async function requestToSetMessageRead(params: {
+  userId: number;
+  messageId: number;
+}) {
   return request('/set-message-read', {
     method: 'PUT',
     data: params,

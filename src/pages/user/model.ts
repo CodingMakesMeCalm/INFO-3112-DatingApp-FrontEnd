@@ -135,9 +135,13 @@ const model: ModelType = {
         return;
       }
 
+      const messages: PersonalMessage[] = response.data;
+      const sortedMessages = messages.sort((a, b) => {
+        return b.id - a.id;
+      });
       yield put({
         type: 'queryMessage',
-        payload: response.data,
+        payload: sortedMessages,
       });
     },
     *readMessage({ payload }, { call, put }) {
@@ -152,9 +156,13 @@ const model: ModelType = {
         return;
       }
 
+      const messages: PersonalMessage[] = response.data;
+      const sortedMessages = messages.sort((a, b) => {
+        return b.id - a.id;
+      });
       yield put({
         type: 'queryMessage',
-        payload: response.data,
+        payload: sortedMessages,
       });
     },
   },

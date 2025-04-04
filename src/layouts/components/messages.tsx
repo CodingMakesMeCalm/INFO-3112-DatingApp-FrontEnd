@@ -50,6 +50,7 @@ const Messages: React.FC = () => {
     dispatch({
       type: 'user/readMessage',
       payload: {
+        userId: userInfo.id,
         messageId: messageId,
       },
     });

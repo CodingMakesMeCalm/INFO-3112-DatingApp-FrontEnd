@@ -109,7 +109,7 @@ const PostPage: React.FC<Prop> = (props) => {
                         setCurrentPost(item);
                         setMessageModalVisible(true);
                       }}
-                      disabled={!userInfo || userInfo.id == item.author_id}
+                      hidden={!userInfo || userInfo.id == item.author_id}
                     >
                       {userInfo && userInfo.id == item.author_id
                         ? ''
@@ -150,7 +150,7 @@ const PostPage: React.FC<Prop> = (props) => {
       >
         <Input.TextArea
           rows={3}
-          //value={messageContent}
+          value={messageContent}
           onChange={(e) => setMessageContent(e.target.value)}
         />
       </Modal>

@@ -1,4 +1,5 @@
 export interface PersonalMessage {
+  id: number;
   send_from: number;
   send_from_name: string;
   send_to: number;
